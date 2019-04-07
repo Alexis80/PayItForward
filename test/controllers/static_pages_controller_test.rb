@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+
  def setup
     @base_title = "Pay It Forward"
   end
@@ -10,8 +11,8 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Home | #{@base_title}"
   end
-
-  test "should get help" do
+#
+ test "should get help" do
     get static_pages_help_url
     assert_response :success
     assert_select "title", "Help | #{@base_title}"
@@ -19,6 +20,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get about" do
     get static_pages_about_url
     assert_response :success
-    assert_select "title", "About | #{@base_title}"
+   assert_select "title", "About | #{@base_title}"
   end
 end
