@@ -1,0 +1,14 @@
+
+<!-- modified from https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1 on 4/22/19 -->
+
+
+<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Request Message", class: "form-control", value: "I would like to receive access to your address. %>
+  </div>
+    <%= f.text_field :user_id",  value: current_user.id, type: "hidden"  %>
+  <div>
+    <%= f.submit "Send Message", class: "ui blue labeled submit icon button" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,115 @@
+<!--modified from railstutorial.org on 4/22/19-->
+
+<% provide(:title, @user.name)%>
+<div class="user">
+  <aside class="col-md-4">
+  
+      <h2>
+        <%= gravatar_for @user %><br>
+       <div class="row">
+        <%= @user.name %> </div>
+      </h2>
+</div>
+<section>
+<div class="user">
+      <h3>
+    <%if (current_user.id == @user.id) && logged_in?%>
+    <%else%>
+     <% if current_user.receivers?(@user)%>
+
+     <%= button_to 'Delete My Access to this User', current_user.passive_relationships.find_by(receiver_id: @user.id, donor_id: current_user.id), method: 'delete'%>
+
+     <%else%>
+
+      <%= button_to 'Request Access to this User', conversations_new_access_con_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+      <% end %>
+
+     <% if current_user.donors?(@user) %>
+
+     <%= button_to "Delete Access this User's Access to Me", current_user.passive_relationships.find_by(receiver_id: current_user.id, donor_id: @user.id), method: 'delet
+e'%>
+     <%else%>
+
+    <%= button_to 'Give this User Access Me', relationships_path(receiver_id: current_user.id, donor_id: @user.id), method: 'post'%>
+     <%end%>
+    <%= button_to 'Message Me', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+
+
+
+    <%end%></h3>
+</div>
+</section>
+<div class="lists">
+      <h2>  Items Needed </h2>
+      <div align="right">
+      <% @user.items.each do |item| %>
+    <tr><div class ="users>
+      <%if(item.extra == false) %>
+    <td><%= item.name %></td>&nbsp; &nbsp;
+    <td><%= item.description %></td><br>
+    <%end%></div>
+<%end%></div>
+<br>
+</tr>
+
+
+     <h2>  Items to Be Donated </h2>
+     <% @user.items.each do |item| %>
+    <div align="right">
+    <div class="users"> 
+    <tr>
+     <% if(item.extra == true) %>
+      <td><%= item.name %></td>&nbsp; &nbsp;
+    <td><%= item.description %></td><br>
+<% end %></div>
+  </div>
+</tr>
+
+<% end %>
+
+</div>
+   <% if current_user?(@user) %>
+   <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+   <%end%>
+  </aside>
+     <!--if user has any microposts, show them-->
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</h3>
+<div class="lists">
+      <h3>  Items Needed </h3>
+    
+      <% @user.items.each do |item| %>
+    <tr>
+      <%if(item.extra == false) %>
+    <td><%= item.name %></td>&nbsp; &nbsp;
+    <td><%= item.description %></td><br>
+    <%end%>
+<%end%>
+<br>
+</tr>
+
+
+     <h3>  Items to Be Donated </h3>
+     <% @user.items.each do |item| %>
+
+   
+    <tr> 
+     <% if(item.extra == true) %>
+      <td><%= item.name %></td>&nbsp; &nbsp;
+    <td><%= item.description %></td><br>
+<% end %>
+   
+</tr>
+
+<% end %>
+
+</div>

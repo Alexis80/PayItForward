@@ -1,0 +1,327 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$primary: #8FCDFE;
+$secondary: #6fbec8;
+$accent: #4880c8;
+
+$alert: #d9534f;
+$success: #5cb85c;
+
+$white: white;
+$off-white: #d9d9d9;
+$gray: #e9ecef;
+
+$text: black;
+
+//partially taken from msf.org on 4/20/19
+  .front-nav-ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+
+  list-style: none;
+  font-size: 1.2vw;
+
+
+  padding: 2vw 0;
+  border-bottom: 2px solid $primary;
+  margin: 0 0 2vw 0;
+
+  @media all and (max-width: 900px) {
+    font-size: 2.25vw;
+  }
+
+  @media all and (max-width: 600px) {
+    flex-direction: column;
+    font-size: 20pt;
+  }
+
+  &__li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 0 4vw;
+   
+    border-right: 2px solid $primary;
+
+    @media all and (max-width: 900px) {
+      padding: 0 2.125vw;
+    }
+    @media all and (max-width: 600px) {
+      padding: 30px 0;
+      border-top: 2px solid $primary;
+      border-left: none;
+    }
+
+    &:first-child {
+      min-width: 100px;
+      max-width: 15vw;
+      width: 10vw;
+
+      border-left: none;
+      margin: 0;
+
+      @media all and (max-width: 600px) {
+        border-top: none;
+      }
+
+      > a {
+        width: 100%;
+
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/* taken from railstutorial.org on 4/20/19*/
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+/* universal */
+
+body {
+  padding-top: 20px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.7em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.0em;
+  line-height: 2em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+.lists{
+   list-style: none;
+    text-align: justify;
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    font-size: 1.2em;
+   margin-right:10px;
+}
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 10;
+  li {
+    text-align: center;
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+  }
+
+}
+
+.row{
+margin-right: 330px;
+
+
+}
+
+.items{
+   list-style: none;
+ 
+   font-size: 1.2em;
+
+   text-align: center   
+
+}
+/* sidebar from railstutorial.org on 4/18/19*/
+
+.align {
+
+  section.user_info {
+    margin-top: 25px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+      //border-bottom: 20px solid black;
+    }
+    h1 {
+      font-size: 1.8em;
+      text-align: center;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+
+.gravatar {
+   margin-top: 25px;
+  float: center;
+  margin-right:23px;
+  margin-left: 5px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.button{
+background-color: $primary;
+
+}
+
+/* form from railstutorial.org on 4/18/19*/
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+input {
+  height: auto !important;
+}
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* microposts from railstutorial.org on 4/23/19*/
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}

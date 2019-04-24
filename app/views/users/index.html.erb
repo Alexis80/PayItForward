@@ -1,0 +1,43 @@
+<!--adapted from railstutorial.org on 4/19/19-->
+<% provide(:title, 'All Users')%>
+<h1>Welcome to Pay It Forward</h1>
+<h2>Select a user from below to view their profile</h2>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+<%= gravatar_for user, size: 50 %>    
+
+<li>
+      
+      <%= link_to user.name, user %>
+      <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "Are you sure you wish to delete this user?" } %>
+  <% end %>
+   &nbsp; &nbsp; &nbsp; &nbsp;  USER TYPE: 
+    <% @items.each do |item| %>
+  <% if (user.id == item.user_id) %> 
+       <% if(item.extra == false)%>
+               | RECEIVER 
+	<%end%>
+      <%break if (item.extra ==false)%>
+  <%end%>
+  <%end%>
+
+    <% @items.each do |item| %>
+  <% if (user.id == item.user_id) %>
+       <% if (item.extra == true) %>
+              | DONOR |
+       <%end%>
+     <%break if (item.extra ==true)%>    
+	
+    <% end %>
+  <% end %>
+
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

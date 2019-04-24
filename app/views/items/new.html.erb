@@ -1,0 +1,17 @@
+<% @page_title = "New Item" %>
+
+<%= link_to("<< Back to List", items_path, :class => 'back-link') %>
+
+<div class="items new">
+  <h2>Add Item</h2>
+
+  <%= form_for(@item, :url => items_path) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Add Item") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<!--modified from railstutorial.org on 4/22/19-->
+<% unless current_user?(@user) %>
+  <div id="access_form">
+  <% if current_user.donors?(@user) %>
+    <%= render 'delete_access' %>
+  <% else %>
+    <%= render 'request_access' %>
+  <% end %>
+  </div>
+<% end %>
