@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  
+  #modified from https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1 on 4/22/19
 
   def index
     @users = User.all
