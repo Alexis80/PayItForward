@@ -2,6 +2,7 @@ Rails.application.routes.draw do
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'sessions/new'
   get 'users/new'
+  get 'users/show'
   root 'users#index'
   get  '/help',    to: 'static_pages#help'
   get  '/signup',  to: 'users#new'
