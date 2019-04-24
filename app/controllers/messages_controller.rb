@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  #modified from https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1 on 4/22/19
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
   end
