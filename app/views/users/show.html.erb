@@ -22,7 +22,7 @@
 
      <%else%>
 
-      <%= button_to 'Request Access to this User', conversations_new_access_con_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+      <%= button_to 'Request Access to this User', conversations_new_access_con_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', :class => "button"%>
       <% end %>
 
      <% if current_user.donors?(@user) %>
@@ -31,9 +31,9 @@
 e'%>
      <%else%>
 
-    <%= button_to 'Give this User Access Me', relationships_path(receiver_id: current_user.id, donor_id: @user.id), method: 'post'%>
+    <%= button_to 'Give this User Access Me', relationships_path(receiver_id: current_user.id, donor_id: @user.id), method: 'post', :class => "button"%>
      <%end%>
-    <%= button_to 'Message Me', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+    <%= button_to 'Message Me', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', :class => "button"%>
 
 
 
