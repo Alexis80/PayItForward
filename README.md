@@ -23,6 +23,15 @@ On initial startup, you will have to create an account to access the application
 The admin account's credentials are as follows:
 *email: example@ex.org
 *password: foobar
+## Suggested Systems
+
+This application has been tested using Chrome, Firefox, and Edge webrowsers on a Windows 10 computer. It is suggested, however, that Chrome or Firefox be used since Edge sometimes throws errors with common syntax. This application should be used on a laptop or desktop since it is not designed for a mobile phone screen. And the operating system should be recent. 
+
+## Known Limitations/Bugs
+
+Currently, the webapp can perform all functions that it was designed to go. However, there is still little error handling for issues such as routing errors and missing method errors. The only error successfully handled was the missing id error which renders a 404 error page.
+
+## Using This Application
 
 ### User List 
 Upon login, the user will be directed to the home page with a list of all users on the platform. All users have a profile image, name, and user type. Their type is determined based on which list they utlilize. No type will show if their lists are blank.
