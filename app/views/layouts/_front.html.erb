@@ -8,16 +8,10 @@
       <li class="front-nav-ul__li"><%= link_to 'MY LISTS', items_path(:user_id => current_user.id), class: 'link' %></li>
       <li class="front-nav-ul__li"><%= link_to 'MY ACCESS', access_path, class: 'link' %></li>
       <li class="front-nav-ul__li"><%= link_to 'INBOX', conversations_path(current_user), class: 'link' %></li>
-      <li class="dropdown" class = "front-nav-ul__li">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                &nbsp; &nbsp; &nbsp; &nbsp; ACCOUNT <b class="caret"></b>
-            </a>
-          <ul class="dropdown-menu">
-          <li class="front-nav-ul__li" ><%= link_to "PROFILE", current_user %></li>
+         <li class="front-nav-ul__li" ><%= link_to "PROFILE", current_user %></li>
           <li class="front-nav-ul__li" ><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
           <li class="front-nav-ul__li" ><%= link_to "LOG OUT", logout_path, method: :delete %></li>
-         </ul>
-          </li>      
+    
 <%else%>
       <li><%= link_to "Log in", login_path %></li>
       <%end%>
