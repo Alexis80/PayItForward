@@ -1,6 +1,6 @@
 # Pay It Foward
 
-In order to run the application:
+## Running the Application:
 
 Log in to your terminal and clone the repository
 
@@ -23,6 +23,7 @@ On initial startup, you will have to create an account to access the application
 The admin account's credentials are as follows:
 *email: example@ex.org
 *password: foobar
+
 ## Suggested Systems
 
 This application has been tested using Chrome, Firefox, and Edge webrowsers on a Windows 10 computer. It is suggested, however, that Chrome or Firefox be used since Edge sometimes throws errors with common syntax. This application should be used on a laptop or desktop since it is not designed for a mobile phone screen. And the operating system should be recent. 
