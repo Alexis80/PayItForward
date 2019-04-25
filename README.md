@@ -1,4 +1,4 @@
-# Pay It Foward
+# Pay It Forward
 
 ## Running the Application:
 
@@ -26,7 +26,7 @@ The admin account's credentials are as follows:
 
 ## Suggested Systems
 
-This application has been tested using Chrome, Firefox, and Edge webrowsers on a Windows 10 computer. It is suggested, however, that Chrome or Firefox be used since Edge sometimes throws errors with common syntax. This application should be used on a laptop or desktop since it is not designed for a mobile phone screen. And the operating system should be recent. 
+This application has been tested using Chrome, Firefox, and Edge web browsers on a Windows 10 computer. It is suggested, however, that Chrome or Firefox be used since Edge sometimes throws errors with common syntax. This application should be used on a laptop or desktop since it is not designed for a mobile phone screen. And the operating system should be recent. 
 
 ## Known Limitations/Bugs
 
@@ -35,7 +35,7 @@ Currently, the webapp can perform all functions that it was designed to go. Howe
 ## Using This Application
 
 ### User List 
-Upon login, the user will be directed to the home page with a list of all users on the platform. All users have a profile image, name, and user type. Their type is determined based on which list they utlilize. No type will show if their lists are blank.
+Upon login, the user will be directed to the home page with a list of all users on the platform. All users have a profile image, name, and user type. Their type is determined based on which list they utilize. No type will show if their lists are blank.
 
 ### User Profiles
 Clicking on a user's name will take you to their profile page. This page serves a few different functions inclusing asking them for access to their mailing address, giving them access to your mailing address, messaging them, viewing their microposts, and viewing the items they both need and are donating. 
@@ -60,7 +60,7 @@ These lists display what the user currently needs and also what they are donatin
 
 ##### Microposts
 
-A list of all user microposts are shown. 
+A list of all user microposts is shown. 
 
 ##### Your Profile
 
