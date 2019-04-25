@@ -18,8 +18,10 @@
     <%else%>
      <% if current_user.receivers?(@user)%>
 
-     <%= button_to 'Delete My Access to this User', current_user.passive_relationships.find_by(receiver_id: @user.id, donor_id: current_user.id), method: 'delete'%>
-
+     <%= form_for(current_user.active_relationships.find_by(donor_id: current_user.id, receiver_id: @user.id),
+             html: { method: :delete }) do |f| %>
+     <%= f.submit "Delete My Access to this User", class: "btn" %>
+     <%end%>
      <%else%>
 
       <%= button_to 'Request Access to this User', conversations_new_access_con_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', :class => "button"%>
@@ -27,8 +29,10 @@
 
      <% if current_user.donors?(@user) %>
 
-     <%= button_to "Delete Access this User's Access to Me", current_user.passive_relationships.find_by(receiver_id: current_user.id, donor_id: @user.id), method: 'delet
-e'%>
+     <%= form_for(current_user.passive_relationships.find_by(receiver_id: current_user.id, donor_id: @user.id),
+             html: { method: :delete }) do |f| %>
+     <%= f.submit "Delete User Access to Me", class: "btn" %>
+     <%end%>
      <%else%>
 
     <%= button_to 'Give this User Access Me', relationships_path(receiver_id: current_user.id, donor_id: @user.id), method: 'post', :class => "button"%>
@@ -40,6 +44,7 @@ e'%>
     <%end%></h3>
 </div>
 </section>
+  
 <section>
 <div class="lists">
       <h2>  Items Needed </h2>
